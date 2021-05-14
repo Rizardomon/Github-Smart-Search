@@ -11,8 +11,25 @@ export const LandingPageContainer = styled.div`
   min-height: 100%;
   width: 100%;
   display: flex;
-  background-color: #282d35;
+  background: rgb(168, 38, 84);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(168, 38, 84, 1) 0%,
+    rgba(253, 140, 105, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(168, 38, 84, 1) 0%,
+    rgba(253, 140, 105, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(168, 38, 84, 1) 0%,
+    rgba(253, 140, 105, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a82654",endColorstr="#fd8c69",GradientType=1);
   flex-direction: column;
+  overflow-y: scroll;
 `;
 
 export const FormWrapper = styled.div`
@@ -32,14 +49,15 @@ export const FormContent = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 30%;
+  width: 50%;
   height: 40px;
   border: none;
   border-radius: 6px;
   font-size: ${rem(16)};
+  font-weight: bold;
   padding-left: ${rem(10)};
   background-color: rgba(255, 255, 255, 0.3);
-  color: salmon;
+  color: black;
 
   :focus {
     border: 1px solid salmon;
@@ -47,21 +65,27 @@ export const Input = styled.input`
   }
 
   ::placeholder {
-    color: #282d35;
+    color: black;
   }
 `;
 
 export const Button = styled.button`
   height: 100%;
-  width: 10%;
-  background-color: salmon;
+  width: 20%;
+  background: rgb(233, 0, 0, 0.4);
+
   border-radius: 5px;
   border: none;
   font-size: ${rem(16)};
-  color: #282d35;
+  color: white;
   box-sizing: content-box;
   margin-left: ${rem(10)};
   cursor: pointer;
+  transition: background-color 0.2s;
+
+  :hover {
+    background: rgb(233, 0, 0, 0.8);
+  }
 
   :focus {
     outline: none;
@@ -81,36 +105,6 @@ export const Card = styled.div`
   margin-top: 10px;
   height: auto;
   width: 100%;
-
-  .row {
-    display: flex;
-    cursor: pointer;
-    width: 44%;
-    height: 45px;
-    margin-top: 10px;
-    background-color: transparent;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: flex-start;
-    pointer-events: none;
-  }
-
-  .row > h2 {
-    color: salmon;
-    pointer-events: auto;
-  }
-
-  .row:hover {
-    background-color: salmon;
-  }
-
-  .row > h2:hover {
-    color: #282d35;
-  }
-
-  .repo-name {
-    margin-left: 5px;
-  }
 `;
 
 export const CardContent = styled.div`
@@ -120,8 +114,9 @@ export const CardContent = styled.div`
   flex-direction: column;
 
   img {
-    width: 20%;
-    height: 20%;
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
   }
 
   p {

@@ -14,8 +14,6 @@ function HomePage() {
 
   const api = {
     baseUrl: 'http://api.github.com',
-    client_id: 'Iv1.b8aaad56a9db6278',
-    client_secret: 'dd9a3c8eb73ebff03b0e703545ec5be1f2a1a2a2',
   };
 
   const headers = {
@@ -33,11 +31,10 @@ function HomePage() {
     fetchData();
   }, []); // eslint-disable-line
 
-  const setData = ({ name, login, bio, public_repos, avatar_url }) => {
+  const setData = ({ name, login, bio, avatar_url }) => {
     setName(name);
     setUserName(login);
     setBio(bio);
-    setRepos(public_repos);
     setAvatar(avatar_url);
   };
 
@@ -54,25 +51,12 @@ function HomePage() {
           setData(res.data);
           setError('');
         });
-      axios
-        .get(`${api.baseUrl}/users/${userInput}/repos`, { headers })
-        .then((res) => {
-          // setRepos(res.data);
-          console.log(res.data);
-        });
     } else {
       setData('');
+
       setError('Usuário não encontrado!');
     }
   };
-
-  // const renderRepo = () => {
-  //   return (
-  //     <div className="row" key={repo.id}>
-  //       <h2 className="repo-name">{repo.name}</h2>
-  //     </div>
-  //   );
-  // }
 
   return (
     <S.ContainerWrapper>
@@ -91,7 +75,6 @@ function HomePage() {
           </S.FormContent>
           {error && <p>{error}</p>}
         </S.FormWrapper>
-        {/* <S.ResultsContainer>{users.map(renderUser)}</S.ResultsContainer> */}
 
         <S.Card>
           <S.CardContent>
