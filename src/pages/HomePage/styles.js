@@ -13,6 +13,7 @@ export const LandingPageContainer = styled.div`
   min-height: 100%;
   width: 100%;
   display: flex;
+  align-items: center;
   background: rgb(93, 105, 190);
   background: -moz-linear-gradient(
     90deg,
@@ -32,6 +33,10 @@ export const LandingPageContainer = styled.div`
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5d69be",endColorstr="#c89feb",GradientType=1);
   flex-direction: column;
   overflow-y: scroll;
+
+  h1 {
+    color: white;
+  }
 `;
 
 export const Header = styled.div`
@@ -156,16 +161,12 @@ export const CardContent = styled.div`
 
   h2 {
     color: white;
-
     margin-bottom: ${rem(10)};
   }
 
-  h3 {
-    color: white;
-
-    margin-bottom: ${rem(10)};
-
-    margin-top: ${rem(10)};
+  .repo-title {
+    font-size: ${rem(30)};
+    color: #32256e;
   }
 
   img {
@@ -179,6 +180,7 @@ export const CardContent = styled.div`
     color: white;
     font-size: ${rem(18)};
     text-align: center;
+    margin-bottom: ${rem(30)};
   }
 
   @media screen and (max-width: 480px) {

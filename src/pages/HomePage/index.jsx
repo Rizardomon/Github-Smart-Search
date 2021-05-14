@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import * as S from './styles';
 
 function HomePage() {
@@ -19,17 +19,6 @@ function HomePage() {
   const headers = {
     'User-Agent': 'rizardomon',
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      await axios
-        .get(`http://api.github.com/users/example`, { headers })
-        .then((res) => {
-          setData(res.data);
-        });
-    };
-    fetchData();
-  }, []); // eslint-disable-line
 
   const setData = ({ name, login, bio, avatar_url }) => {
     setName(name);
@@ -112,17 +101,21 @@ function HomePage() {
           {error && <p>{error}</p>}
         </S.FormWrapper>
 
-        <S.Card>
-          <S.CardContent>
-            <img src={avatar} />
-            <h1>{name}</h1>
-            <h2>{userName}</h2>
-            <p>{bio}</p>
-            <h3>Repositórios:</h3>
-          </S.CardContent>
+        {name !== '' ? (
+          <S.Card>
+            <S.CardContent>
+              <img src={avatar} alt="Github avatar" />
+              <h1>{name}</h1>
+              <h2>{userName}</h2>
+              <p>{bio}</p>
+              <h2 className="repo-title">Repositórios:</h2>
+            </S.CardContent>
 
-          <S.ResultsContainer>{repos.map(renderRepo)}</S.ResultsContainer>
-        </S.Card>
+            <S.ResultsContainer>{repos.map(renderRepo)}</S.ResultsContainer>
+          </S.Card>
+        ) : (
+          <h1>Pesquise por um usuário!</h1>
+        )}
       </S.LandingPageContainer>
     </S.ContainerWrapper>
   );
