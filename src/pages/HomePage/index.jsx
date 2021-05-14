@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import * as S from './styles';
 
 function HomePage() {
@@ -74,14 +73,14 @@ function HomePage() {
     };
     return (
       <div className="row" key={repo.id}>
-        <Link
+        <S.AnchorRepo
           to={{
             pathname: '/description',
             state: repoData, // your data array of objects
           }}
         >
           {repo.name}
-        </Link>
+        </S.AnchorRepo>
       </div>
     );
   };
@@ -89,6 +88,11 @@ function HomePage() {
   return (
     <S.ContainerWrapper>
       <S.LandingPageContainer>
+        <S.Header>
+          <h1>
+            Github Smart Search <S.GithubIcon />
+          </h1>
+        </S.Header>
         <S.FormWrapper>
           <S.FormContent>
             <S.Input
@@ -98,6 +102,7 @@ function HomePage() {
               onChange={handleSearch}
             />
             <S.Button type="submit" onClick={handleSubmit}>
+              <S.SearchIcon />
               {loading ? 'Buscando...' : 'Buscar'}
             </S.Button>
           </S.FormContent>

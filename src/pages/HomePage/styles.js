@@ -1,4 +1,5 @@
 import { rem } from 'polished';
+import { FaGithub, FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -12,25 +13,48 @@ export const LandingPageContainer = styled.div`
   min-height: 100%;
   width: 100%;
   display: flex;
-  background: rgb(168, 38, 84);
+  background: rgb(93, 105, 190);
   background: -moz-linear-gradient(
     90deg,
-    rgba(168, 38, 84, 1) 0%,
-    rgba(253, 140, 105, 1) 100%
+    rgba(93, 105, 190, 1) 0%,
+    rgba(200, 159, 235, 1) 100%
   );
   background: -webkit-linear-gradient(
     90deg,
-    rgba(168, 38, 84, 1) 0%,
-    rgba(253, 140, 105, 1) 100%
+    rgba(93, 105, 190, 1) 0%,
+    rgba(200, 159, 235, 1) 100%
   );
   background: linear-gradient(
     90deg,
-    rgba(168, 38, 84, 1) 0%,
-    rgba(253, 140, 105, 1) 100%
+    rgba(93, 105, 190, 1) 0%,
+    rgba(200, 159, 235, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a82654",endColorstr="#fd8c69",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5d69be",endColorstr="#c89feb",GradientType=1);
   flex-direction: column;
   overflow-y: scroll;
+`;
+
+export const Header = styled.div`
+  width: 100%;
+  height: 12%;
+  padding: ${rem(15)};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    color: white;
+  }
+
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: ${rem(22)};
+    }
+  }
+`;
+
+export const GithubIcon = styled(FaGithub)`
+  margin-left: ${rem(10)};
 `;
 
 export const FormWrapper = styled.div`
@@ -58,7 +82,7 @@ export const Input = styled.input`
   font-weight: bold;
   padding-left: ${rem(10)};
   background-color: rgba(255, 255, 255, 0.3);
-  color: black;
+  color: white;
 
   :focus {
     border: 1px solid salmon;
@@ -66,14 +90,14 @@ export const Input = styled.input`
   }
 
   ::placeholder {
-    color: black;
+    color: white;
   }
 `;
 
 export const Button = styled.button`
   height: 100%;
   width: 20%;
-  background: rgb(233, 0, 0, 0.4);
+  background: rgba(93, 105, 190, 0.8);
 
   border-radius: 5px;
   border: none;
@@ -83,13 +107,86 @@ export const Button = styled.button`
   margin-left: ${rem(10)};
   cursor: pointer;
   transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   :hover {
-    background: rgb(233, 0, 0, 0.8);
+    background: rgba(93, 105, 190, 0.3);
   }
 
   :focus {
     outline: none;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 22%;
+    font-size: ${rem(12)};
+  }
+`;
+
+export const SearchIcon = styled(FaSearch)`
+  margin-right: ${rem(10)};
+
+  @media screen and (max-width: 480px) {
+    margin-right: ${rem(5)};
+  }
+`;
+
+export const Card = styled.div`
+  margin-top: ${rem(40)};
+  height: auto;
+  width: 100%;
+
+  @media screen and (max-width: 480px) {
+    margin-top: ${rem(30)};
+  }
+`;
+
+export const CardContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  h1 {
+    color: white;
+    margin-top: ${rem(10)};
+  }
+
+  h2 {
+    color: white;
+
+    margin-bottom: ${rem(10)};
+  }
+
+  img {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+  }
+
+  p {
+    padding: 0 ${rem(15)} 0 ${rem(15)};
+    color: white;
+    font-size: ${rem(18)};
+    text-align: center;
+  }
+
+  @media screen and (max-width: 480px) {
+    img {
+      width: 30%;
+      height: 30%;
+    }
+  }
+`;
+
+export const AnchorRepo = styled(Link)`
+  color: salmon;
+  pointer-events: auto;
+
+  :hover {
+    color: #282d35;
   }
 `;
 
@@ -129,38 +226,5 @@ export const ResultsContainer = styled.div`
 
   .repo-name {
     margin-left: 5px;
-  }
-`;
-
-export const Card = styled.div`
-  margin-top: 10px;
-  height: auto;
-  width: 100%;
-`;
-
-export const CardContent = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-
-  img {
-    width: 25%;
-    height: 25%;
-    border-radius: 50%;
-  }
-
-  p {
-    color: black;
-    font-size: ${rem(18)};
-    text-align: center;
-  }
-`;
-
-export const AnchorRepo = styled(Link)`
-  color: salmon;
-
-  :hover {
-    color: #282d35;
   }
 `;
