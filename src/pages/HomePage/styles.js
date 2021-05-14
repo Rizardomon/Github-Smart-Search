@@ -1,4 +1,5 @@
 import { rem } from 'polished';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ContainerWrapper = styled.div`
@@ -99,6 +100,36 @@ export const ResultsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .row {
+    display: flex;
+    cursor: pointer;
+    width: 44%;
+    height: 45px;
+    margin-top: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: flex-start;
+    pointer-events: none;
+  }
+
+  .row > a {
+    color: salmon;
+    pointer-events: auto;
+  }
+
+  .row:hover {
+    background-color: salmon;
+  }
+
+  .row > a:hover {
+    color: #282d35;
+  }
+
+  .repo-name {
+    margin-left: 5px;
+  }
 `;
 
 export const Card = styled.div`
@@ -123,5 +154,13 @@ export const CardContent = styled.div`
     color: black;
     font-size: ${rem(18)};
     text-align: center;
+  }
+`;
+
+export const AnchorRepo = styled(Link)`
+  color: salmon;
+
+  :hover {
+    color: #282d35;
   }
 `;

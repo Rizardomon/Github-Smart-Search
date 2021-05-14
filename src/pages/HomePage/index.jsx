@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import * as S from './styles';
 
 function HomePage() {
@@ -51,11 +52,38 @@ function HomePage() {
           setData(res.data);
           setError('');
         });
+
+      axios
+        .get(`${api.baseUrl}/users/${userInput}/repos`, { headers })
+        .then((res) => {
+          setRepos(res.data);
+        });
     } else {
       setData('');
-
+      setRepos([]);
       setError('Usuário não encontrado!');
     }
+  };
+
+  const renderRepo = (repo) => {
+    const repoData = {
+      name: repo.name,
+      description: repo.description,
+      owner: repo.owner.login,
+      language: repo.language,
+    };
+    return (
+      <div className="row" key={repo.id}>
+        <Link
+          to={{
+            pathname: '/description',
+            state: repoData, // your data array of objects
+          }}
+        >
+          {repo.name}
+        </Link>
+      </div>
+    );
   };
 
   return (
@@ -84,6 +112,7 @@ function HomePage() {
             <h2>{userName}</h2>
             <p>{bio}</p>
           </S.CardContent>
+          <S.ResultsContainer>{repos.map(renderRepo)}</S.ResultsContainer>
         </S.Card>
       </S.LandingPageContainer>
     </S.ContainerWrapper>
