@@ -116,6 +116,9 @@ function HomePage() {
         ) : (
           <h1>Pesquise por um usuário!</h1>
         )}
+        <S.Footer>
+          <p>Copyright © Richard Robinson</p>
+        </S.Footer>
       </S.LandingPageContainer>
     </S.ContainerWrapper>
   );

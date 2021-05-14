@@ -36,10 +36,11 @@ export const LandingPageContainer = styled.div`
 
   h1 {
     color: white;
+    text-align: center;
   }
 `;
 
-export const Header = styled.div`
+export const Header = styled.header`
   width: 100%;
   height: 12%;
   padding: ${rem(15)};
@@ -55,6 +56,17 @@ export const Header = styled.div`
     h1 {
       font-size: ${rem(22)};
     }
+  }
+`;
+
+export const Footer = styled.footer`
+  width: 100%;
+  height: 10%;
+  padding: ${rem(10)} 0 ${rem(10)} 0;
+
+  p {
+    color: white;
+    text-align: center;
   }
 `;
 
@@ -79,7 +91,7 @@ export const FormContent = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 50%;
+  width: 60%;
   height: 40px;
   border: none;
   border-radius: 6px;
@@ -101,7 +113,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   height: 100%;
-  width: 20%;
+  width: 40%;
   background: rgba(93, 105, 190, 0.8);
 
   border-radius: 5px;
@@ -125,7 +137,7 @@ export const Button = styled.button`
   }
 
   @media screen and (max-width: 480px) {
-    width: 22%;
+    width: 30%;
     font-size: ${rem(12)};
   }
 `;
@@ -167,6 +179,7 @@ export const CardContent = styled.div`
   .repo-title {
     font-size: ${rem(30)};
     color: #32256e;
+    margin-bottom: ${rem(0)};
   }
 
   img {
@@ -180,7 +193,7 @@ export const CardContent = styled.div`
     color: white;
     font-size: ${rem(18)};
     text-align: center;
-    margin-bottom: ${rem(30)};
+    margin-bottom: ${rem(40)};
   }
 
   @media screen and (max-width: 480px) {
