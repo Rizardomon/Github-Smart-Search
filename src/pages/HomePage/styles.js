@@ -160,6 +160,14 @@ export const CardContent = styled.div`
     margin-bottom: ${rem(10)};
   }
 
+  h3 {
+    color: white;
+
+    margin-bottom: ${rem(10)};
+
+    margin-top: ${rem(10)};
+  }
+
   img {
     width: 20%;
     height: 20%;
@@ -182,49 +190,48 @@ export const CardContent = styled.div`
 `;
 
 export const AnchorRepo = styled(Link)`
-  color: salmon;
   pointer-events: auto;
-
-  :hover {
-    color: #282d35;
-  }
+  text-decoration: none;
+  color: white;
 `;
 
 export const ResultsContainer = styled.div`
-  margin-top: 10px;
+  margin-top: ${rem(15)};
   height: auto;
   width: 100%;
+
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: center;
+`;
+
+export const ResultsContent = styled.div`
+  background-color: #32256e;
+  margin: 0 ${rem(5)} ${rem(15)} ${rem(5)};
+  padding-left: ${rem(10)};
+  padding-right: ${rem(10)};
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  :hover {
+    background-color: rgba(93, 105, 190, 0.5);
+  }
 
   .row {
-    display: flex;
     cursor: pointer;
-    width: 44%;
-    height: 45px;
-    margin-top: 10px;
-    background-color: transparent;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: flex-start;
+    width: ${rem(130)};
+    height: ${rem(130)};
+
     pointer-events: none;
-  }
 
-  .row > a {
-    color: salmon;
-    pointer-events: auto;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  .row:hover {
-    background-color: salmon;
-  }
-
-  .row > a:hover {
-    color: #282d35;
-  }
-
-  .repo-name {
-    margin-left: 5px;
+    span {
+      margin-top: ${rem(10)};
+      text-align: center;
+    }
   }
 `;

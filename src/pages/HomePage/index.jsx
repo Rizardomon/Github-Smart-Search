@@ -72,16 +72,19 @@ function HomePage() {
       language: repo.language,
     };
     return (
-      <div className="row" key={repo.id}>
+      <S.ResultsContent>
         <S.AnchorRepo
           to={{
             pathname: '/description',
             state: repoData, // your data array of objects
           }}
         >
-          {repo.name}
+          <div className="row" key={repo.id}>
+            <S.GithubIcon size={30} />
+            <span>{repo.name}</span>
+          </div>
         </S.AnchorRepo>
-      </div>
+      </S.ResultsContent>
     );
   };
 
@@ -112,11 +115,12 @@ function HomePage() {
         <S.Card>
           <S.CardContent>
             <img src={avatar} />
-
             <h1>{name}</h1>
             <h2>{userName}</h2>
             <p>{bio}</p>
+            <h3>Repositórios:</h3>
           </S.CardContent>
+
           <S.ResultsContainer>{repos.map(renderRepo)}</S.ResultsContainer>
         </S.Card>
       </S.LandingPageContainer>
