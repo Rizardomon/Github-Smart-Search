@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import Header from '../../containers/Header';
 import * as S from './styles';
 
 function HomePage() {
@@ -80,11 +81,7 @@ function HomePage() {
   return (
     <S.ContainerWrapper>
       <S.LandingPageContainer>
-        <S.Header>
-          <h1>
-            Github Smart Search <S.GithubIcon />
-          </h1>
-        </S.Header>
+        <Header />
         <S.FormWrapper>
           <S.FormContent>
             <S.Input

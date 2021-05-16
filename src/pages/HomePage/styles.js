@@ -40,25 +40,6 @@ export const LandingPageContainer = styled.div`
   }
 `;
 
-export const Header = styled.header`
-  width: 100%;
-  height: 12%;
-  padding: ${rem(15)};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  h1 {
-    color: white;
-  }
-
-  @media screen and (max-width: 480px) {
-    h1 {
-      font-size: ${rem(22)};
-    }
-  }
-`;
-
 export const Footer = styled.footer`
   width: 100%;
   height: 10%;
