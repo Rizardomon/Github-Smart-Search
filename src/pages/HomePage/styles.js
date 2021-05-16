@@ -14,6 +14,7 @@ export const LandingPageContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: rgb(93, 105, 190);
   background: -moz-linear-gradient(
     90deg,
@@ -37,17 +38,20 @@ export const LandingPageContainer = styled.div`
   h1 {
     color: white;
     text-align: center;
+    font-size: ${rem(22)};
   }
 `;
 
 export const Footer = styled.footer`
   width: 100%;
   height: 10%;
-  padding: ${rem(10)} 0 ${rem(10)} 0;
 
   p {
+    font-size: ${rem(11)};
     color: white;
     text-align: center;
+    padding-top: ${rem(20)};
+    padding-bottom: ${rem(10)};
   }
 `;
 
@@ -56,13 +60,17 @@ export const GithubIcon = styled(FaGithub)`
 `;
 
 export const FormWrapper = styled.div`
-  width: 100%;
+  width: 60%;
   height: 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin-top: ${rem(15)};
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 export const FormContent = styled.div`

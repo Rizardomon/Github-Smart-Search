@@ -82,6 +82,7 @@ function HomePage() {
     <S.ContainerWrapper>
       <S.LandingPageContainer>
         <Header />
+        {name !== '' ? <div /> : <h1>Pesquise por um usuário!</h1>}
         <S.FormWrapper>
           <S.FormContent>
             <S.Input
@@ -111,7 +112,7 @@ function HomePage() {
             <S.ResultsContainer>{repos.map(renderRepo)}</S.ResultsContainer>
           </S.Card>
         ) : (
-          <h1>Pesquise por um usuário!</h1>
+          <div />
         )}
         <S.Footer>
           <p>Copyright © Richard Robinson</p>

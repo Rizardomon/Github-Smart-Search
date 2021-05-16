@@ -9,9 +9,16 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   h1 {
     color: white;
+  }
+
+  ::after {
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid white;
   }
 
   @media screen and (max-width: 480px) {
