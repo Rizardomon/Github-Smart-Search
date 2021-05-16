@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import Footer from '../../containers/Footer';
 import Header from '../../containers/Header';
 import * as S from './styles';
 
@@ -114,9 +115,7 @@ function HomePage() {
         ) : (
           <div />
         )}
-        <S.Footer>
-          <p>Copyright © Richard Robinson</p>
-        </S.Footer>
+        <Footer />
       </S.LandingPageContainer>
     </S.ContainerWrapper>
   );
