@@ -81,7 +81,12 @@ function HomePage() {
     <S.ContainerWrapper>
       <S.LandingPageContainer>
         <Header />
-        {error !== '' ? <div /> : <h1>Pesquise por um usuário!</h1>}
+        {error === '' || error === 'Usuário não encontrado!' ? (
+          <h1>Pesquise por um usuário!</h1>
+        ) : (
+          <div />
+        )}
+
         <S.FormWrapper>
           <S.FormContent>
             <S.Input
