@@ -15,6 +15,9 @@ function HomePage() {
 
   const api = {
     baseUrl: 'https://api.github.com',
+    headers: {
+      'User-Agent': 'rizardomon',
+    },
   };
 
   const setData = ({ name, login, bio, avatar_url }) => {
@@ -32,10 +35,15 @@ function HomePage() {
   const handleSubmit = () => {
     if (userInput.trim() !== '') {
       axios
-        .get(`${api.baseUrl}/users/${userInput}`)
+        .get(`${api.baseUrl}/users/${userInput}`, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+
         .then((res) => {
           setData(res.data);
-          setError('.');
+          setError('');
         })
         .catch((err) => {
           setData('');
@@ -43,9 +51,15 @@ function HomePage() {
           setError('Usuário não encontrado!');
         });
 
-      axios.get(`${api.baseUrl}/users/${userInput}/repos`).then((res) => {
-        setRepos(res.data);
-      });
+      axios
+        .get(`${api.baseUrl}/users/${userInput}/repos`, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        .then((res) => {
+          setRepos(res.data);
+        });
     } else {
       setData('');
       setRepos([]);
