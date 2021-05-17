@@ -81,7 +81,7 @@ function HomePage() {
     <S.ContainerWrapper>
       <S.LandingPageContainer>
         <Header />
-        {name !== '' ? <div /> : <h1>Pesquise por um usuário!</h1>}
+        {error === '' ? <div /> : <h1>Pesquise por um usuário!</h1>}
         <S.FormWrapper>
           <S.FormContent>
             <S.Input

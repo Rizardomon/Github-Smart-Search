@@ -52,6 +52,12 @@ export const FormWrapper = styled.div`
   align-items: center;
   margin-top: ${rem(15)};
 
+  p {
+    margin-top: ${rem(15)};
+
+    color: white;
+  }
+
   @media screen and (max-width: 480px) {
     width: 100%;
     margin-bottom: ${rem(20)};
