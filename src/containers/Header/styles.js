@@ -2,7 +2,7 @@ import { rem } from 'polished';
 import { FaGithub } from 'react-icons/fa';
 import styled from 'styled-components';
 
-export const Header = styled.header`
+export const HeaderWrapper = styled.header`
   width: 100%;
   height: 12%;
   padding: ${rem(15)};
@@ -26,6 +26,13 @@ export const Header = styled.header`
       font-size: ${rem(22)};
     }
   }
+`;
+
+export const HeaderContent = styled.header`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 `;
 
 export const GithubIcon = styled(FaGithub)`

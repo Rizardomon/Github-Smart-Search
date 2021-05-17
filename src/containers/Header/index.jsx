@@ -1,12 +1,15 @@
 import * as S from './styles';
 
-function Header() {
+function Header({ children }) {
   return (
-    <S.Header>
-      <h1>
-        Github Smart Search <S.GithubIcon />
-      </h1>
-    </S.Header>
+    <S.HeaderWrapper>
+      <S.HeaderContent>
+        {children}
+        <h1>
+          Github Smart Search <S.GithubIcon />
+        </h1>
+      </S.HeaderContent>
+    </S.HeaderWrapper>
   );
 }
 

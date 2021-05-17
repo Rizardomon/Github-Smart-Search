@@ -1,4 +1,6 @@
 import { rem } from 'polished';
+import { FaAngleLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ContainerWrapper = styled.div`
@@ -85,4 +87,15 @@ export const Content = styled.div`
     margin: 0 auto;
     margin-bottom: ${rem(10)};
   }
+`;
+
+export const CustomLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const AngleLeftIcon = styled(FaAngleLeft)`
+  color: white;
+  font-size: ${rem(25)};
 `;

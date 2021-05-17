@@ -9,7 +9,11 @@ function DescriptionPage() {
   return (
     <S.ContainerWrapper>
       <S.PageContainer>
-        <Header />
+        <Header>
+          <S.CustomLink to="/">
+            <S.AngleLeftIcon />
+          </S.CustomLink>
+        </Header>
         <S.ContentWrapper>
           <h1>Dados do repositório</h1>
           <S.Content>
