@@ -12,6 +12,7 @@ function HomePage() {
   const [avatar, setAvatar] = useState('');
   const [userInput, setUserInput] = useState('');
   const [error, setError] = useState('');
+  const [search, setSearch] = useState(true);
 
   const api = {
     baseUrl: 'https://api.github.com',
@@ -44,11 +45,13 @@ function HomePage() {
         .then((res) => {
           setData(res.data);
           setError('');
+          setSearch(false);
         })
         .catch((err) => {
           setData('');
           setRepos([]);
           setError('Usuário não encontrado!');
+          setSearch(true);
         });
 
       axios
@@ -64,6 +67,7 @@ function HomePage() {
       setData('');
       setRepos([]);
       setError('Usuário não encontrado!');
+      setSearch(true);
     }
   };
 
@@ -95,11 +99,7 @@ function HomePage() {
     <S.ContainerWrapper>
       <S.LandingPageContainer>
         <Header />
-        {error === '' || error === 'Usuário não encontrado!' ? (
-          <h1>Pesquise por um usuário!</h1>
-        ) : (
-          <div />
-        )}
+        {search && <h1>Pesquise por um usuário!</h1>}
 
         <S.FormWrapper>
           {error && <p>{error}</p>}
