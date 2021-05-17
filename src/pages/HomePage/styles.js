@@ -81,7 +81,7 @@ export const Input = styled.input`
   color: white;
 
   :focus {
-    border: 1px solid salmon;
+    border: 1px solid white;
     outline: none;
   }
 
