@@ -12,14 +12,9 @@ function HomePage() {
   const [avatar, setAvatar] = useState('');
   const [userInput, setUserInput] = useState('');
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
 
   const api = {
     baseUrl: 'http://api.github.com',
-  };
-
-  const headers = {
-    'User-Agent': 'rizardomon',
   };
 
   const setData = ({ name, login, bio, avatar_url }) => {
@@ -36,18 +31,14 @@ function HomePage() {
 
   const handleSubmit = () => {
     if (userInput.trim() !== '') {
-      axios
-        .get(`${api.baseUrl}/users/${userInput}`, { headers })
-        .then((res) => {
-          setData(res.data);
-          setError('');
-        });
+      axios.get(`${api.baseUrl}/users/${userInput}`).then((res) => {
+        setData(res.data);
+        setError('');
+      });
 
-      axios
-        .get(`${api.baseUrl}/users/${userInput}/repos`, { headers })
-        .then((res) => {
-          setRepos(res.data);
-        });
+      axios.get(`${api.baseUrl}/users/${userInput}/repos`).then((res) => {
+        setRepos(res.data);
+      });
     } else {
       setData('');
       setRepos([]);
@@ -94,7 +85,7 @@ function HomePage() {
             />
             <S.Button type="submit" onClick={handleSubmit}>
               <S.SearchIcon />
-              {loading ? 'Buscando...' : 'Buscar'}
+              Buscar
             </S.Button>
           </S.FormContent>
           {error && <p>{error}</p>}
