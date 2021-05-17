@@ -38,6 +38,8 @@ function HomePage() {
           setError('');
         })
         .catch((err) => {
+          setData('');
+          setRepos([]);
           setError('Usuário não encontrado!');
         });
 
