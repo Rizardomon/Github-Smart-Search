@@ -1,16 +1,35 @@
 import { useLocation } from 'react-router';
-import { Container } from './styles';
+import Footer from '../../containers/Footer';
+import Header from '../../containers/Header';
+import * as S from './styles';
 
 function DescriptionPage() {
   let repoData = useLocation();
 
   return (
-    <Container>
-      <h1>{repoData.state.name}</h1>
-      <h1>{repoData.state.description}</h1>
-      <h1>{repoData.state.owner}</h1>
-      <h1>{repoData.state.language}</h1>
-    </Container>
+    <S.ContainerWrapper>
+      <S.PageContainer>
+        <Header />
+        <S.ContentWrapper>
+          <h1>Dados do repositório</h1>
+          <S.Content>
+            <p>
+              <b>Nome:</b> {repoData.state.name}
+            </p>
+            <p>
+              <b>Descrição:</b> {repoData.state.description}
+            </p>
+            <p>
+              <b>Dono:</b> {repoData.state.owner}
+            </p>
+            <p>
+              <b>Linguagem:</b> {repoData.state.language}
+            </p>
+          </S.Content>
+        </S.ContentWrapper>
+        <Footer />
+      </S.PageContainer>
+    </S.ContainerWrapper>
   );
 }
 
