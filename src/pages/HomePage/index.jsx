@@ -88,6 +88,7 @@ function HomePage() {
         )}
 
         <S.FormWrapper>
+          {error && <p>{error}</p>}
           <S.FormContent>
             <S.Input
               type="search"
@@ -100,7 +101,6 @@ function HomePage() {
               Buscar
             </S.Button>
           </S.FormContent>
-          {error && <p>{error}</p>}
         </S.FormWrapper>
 
         {name && (
