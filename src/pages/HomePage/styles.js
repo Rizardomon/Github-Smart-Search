@@ -38,13 +38,10 @@ export const LandingPageContainer = styled.div`
   h1 {
     color: white;
     text-align: center;
-    font-size: ${rem(22)};
   }
 `;
 
-export const GithubIcon = styled(FaGithub)`
-  margin-left: ${rem(10)};
-`;
+export const GithubIcon = styled(FaGithub)``;
 
 export const FormWrapper = styled.div`
   width: 60%;
@@ -167,7 +164,7 @@ export const CardContent = styled.div`
   p {
     padding: 0 ${rem(15)} 0 ${rem(15)};
     color: white;
-    font-size: ${rem(18)};
+    font-size: ${rem(14)};
     text-align: center;
     margin-bottom: ${rem(40)};
   }

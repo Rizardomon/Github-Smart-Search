@@ -35,7 +35,6 @@ export const PageContainer = styled.div`
 
   h1 {
     text-align: center;
-    font-size: ${rem(22)};
     padding: ${rem(10)} 0 ${rem(10)} 0;
   }
 `;

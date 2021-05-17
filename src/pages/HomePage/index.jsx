@@ -31,10 +31,15 @@ function HomePage() {
 
   const handleSubmit = () => {
     if (userInput.trim() !== '') {
-      axios.get(`${api.baseUrl}/users/${userInput}`).then((res) => {
-        setData(res.data);
-        setError('');
-      });
+      axios
+        .get(`${api.baseUrl}/users/${userInput}`)
+        .then((res) => {
+          setData(res.data);
+          setError('');
+        })
+        .catch((err) => {
+          setError('Usuário não encontrado!');
+        });
 
       axios.get(`${api.baseUrl}/users/${userInput}/repos`).then((res) => {
         setRepos(res.data);
@@ -91,7 +96,7 @@ function HomePage() {
           {error && <p>{error}</p>}
         </S.FormWrapper>
 
-        {name !== '' ? (
+        {name && (
           <S.Card>
             <S.CardContent>
               <img src={avatar} alt="Github avatar" />
@@ -103,9 +108,8 @@ function HomePage() {
 
             <S.ResultsContainer>{repos.map(renderRepo)}</S.ResultsContainer>
           </S.Card>
-        ) : (
-          <div />
         )}
+
         <Footer />
       </S.LandingPageContainer>
     </S.ContainerWrapper>
