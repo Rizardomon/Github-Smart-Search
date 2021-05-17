@@ -54,6 +54,7 @@ export const FormWrapper = styled.div`
 
   @media screen and (max-width: 480px) {
     width: 100%;
+    margin-bottom: ${rem(20)};
   }
 `;
 
@@ -61,11 +62,16 @@ export const FormContent = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Input = styled.input`
-  width: 60%;
-  height: 40px;
+  width: 90%;
+  height: 50px;
   border: none;
   border-radius: 6px;
   font-size: ${rem(16)};
@@ -81,6 +87,11 @@ export const Input = styled.input`
 
   ::placeholder {
     color: white;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 80px;
+    margin-bottom: ${rem(10)};
   }
 `;
 
@@ -111,7 +122,8 @@ export const Button = styled.button`
 
   @media screen and (max-width: 480px) {
     width: 30%;
-    font-size: ${rem(12)};
+    height: 80%;
+    font-size: ${rem(16)};
   }
 `;
 

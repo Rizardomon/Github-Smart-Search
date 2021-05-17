@@ -84,7 +84,7 @@ function HomePage() {
           <S.FormContent>
             <S.Input
               type="search"
-              placeholder="Github Username"
+              placeholder="Usuário do Github"
               value={userInput}
               onChange={handleSearch}
             />

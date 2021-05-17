@@ -72,9 +72,8 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding-left: ${rem(10)};
-
   p {
+    padding-left: ${rem(10)};
     margin: ${rem(10)} 0 ${rem(10)} 0;
     color: #343434;
   }
@@ -83,6 +82,7 @@ export const Content = styled.div`
     content: '';
     width: 90%;
     border-bottom: 1px solid #343434;
+    margin: 0 auto;
     margin-bottom: ${rem(10)};
   }
 `;
