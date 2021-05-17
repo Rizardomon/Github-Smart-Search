@@ -14,7 +14,7 @@ function HomePage() {
   const [error, setError] = useState('');
 
   const api = {
-    baseUrl: 'http://api.github.com',
+    baseUrl: 'https://api.github.com',
   };
 
   const setData = ({ name, login, bio, avatar_url }) => {
