@@ -35,7 +35,7 @@ function HomePage() {
         .get(`${api.baseUrl}/users/${userInput}`)
         .then((res) => {
           setData(res.data);
-          setError('');
+          setError('.');
         })
         .catch((err) => {
           setData('');
@@ -61,14 +61,14 @@ function HomePage() {
       language: repo.language,
     };
     return (
-      <S.ResultsContent>
+      <S.ResultsContent key={repo.id}>
         <S.AnchorRepo
           to={{
             pathname: '/description',
             state: repoData, // your data array of objects
           }}
         >
-          <div className="row" key={repo.id}>
+          <div className="row">
             <S.GithubIcon size={30} />
             <span>{repo.name}</span>
           </div>
@@ -81,7 +81,7 @@ function HomePage() {
     <S.ContainerWrapper>
       <S.LandingPageContainer>
         <Header />
-        {error === '' ? <div /> : <h1>Pesquise por um usuário!</h1>}
+        {error !== '' ? <div /> : <h1>Pesquise por um usuário!</h1>}
         <S.FormWrapper>
           <S.FormContent>
             <S.Input
